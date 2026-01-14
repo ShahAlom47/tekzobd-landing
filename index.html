@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TekzoBD – Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      text-align: center;
+      color: #1f2933;
+    }
+
+    .container {
+      padding: 40px 20px;
+    }
+
+    .logo img {
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    .banner img {
+      max-width: 100%;
+      border-radius: 16px;
+      margin: 30px 0;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .time-box {
+      background: #2563eb;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      min-width: 80px;
+    }
+
+    .time-box span {
+      font-size: 26px;
+      font-weight: bold;
+      display: block;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="logo.png" alt="TekzoBD Logo">
+    </div>
+
+    <h1>We Are Launching Soon 🚀</h1>
+    <p>Experience innovation with TekzoBD</p>
+
+    <!-- BANNER -->
+    <div class="banner">
+      <img src="banner.png" alt="TekzoBD Products">
+    </div>
+
+    <!-- TIMER -->
+    <div class="timer">
+      <div class="time-box">
+        <span id="days">00</span>Days
+      </div>
+      <div class="time-box">
+        <span id="hours">00</span>Hours
+      </div>
+      <div class="time-box">
+        <span id="minutes">00</span>Min
+      </div>
+      <div class="time-box">
+        <span id="seconds">00</span>Sec
+      </div>
+    </div>
+
+    <footer>
+      © 2026 TekzoBD | www.tekzobd.com
+    </footer>
+
+  </div>
+
+  <script>
+    const launchDate = new Date("2026-01-31T00:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const diff = launchDate - now;
+
+      document.getElementById("days").innerText =
+        Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      document.getElementById("hours").innerText =
+        Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+      document.getElementById("minutes").innerText =
+        Math.floor((diff / (1000 * 60)) % 60);
+
+      document.getElementById("seconds").innerText =
+        Math.floor((diff / 1000) % 60);
+    }, 1000);
+  </script>
+
+</body>
+</html>
